@@ -62,7 +62,7 @@ The Bus Booking System is a comprehensive web-based application designed to stre
 - Spring Boot framework
 - RESTful API architecture
 - JWT authentication
-- MongoDB database
+- MySQL database
 - Transaction management
 - Exception handling
 
