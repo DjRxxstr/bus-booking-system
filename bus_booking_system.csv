@@ -1,0 +1,29 @@
+DatabaseName	ParentSchema	ParentTable	ColumnName	ColumnOrder	DataType	ColumnSize	ConstraintType	ChildSchema	ChildTable	ChildColumn
+bus_booking		User	id	1	Long		PRIMARY KEY			
+bus_booking		User	name	2	String		NOT NULL			
+bus_booking		User	email	3	String		UNIQUE			
+bus_booking		User	age	4	Integer					
+bus_booking		User	gender	5	String					
+bus_booking		User	role	6	String		NOT NULL			
+bus_booking		User	password	7	String		NOT NULL			
+bus_booking		User	isPregnant	8	Boolean					
+bus_booking		Bus	id	1	Long		PRIMARY KEY			
+bus_booking		Bus	name	2	String		NOT NULL			
+bus_booking		Bus	route	3	String		NOT NULL			
+bus_booking		Bus	departureTime	4	String		NOT NULL			
+bus_booking		Bus	arrivalTime	5	String		NOT NULL			
+bus_booking		Bus	availableSeats	6	Integer					
+bus_booking		Bus	totalSeats	7	Integer					
+bus_booking		Bus	price	8	BigDecimal		NOT NULL			
+bus_booking		Seat	id	1	Long		PRIMARY KEY			
+bus_booking		Seat	seatNumber	2	String		NOT NULL			
+bus_booking		Seat	seatType	3	Enum(REGULAR, ELDER, PREGNANT)					
+bus_booking		Seat	status	4	Enum(AVAILABLE, BOOKED)					
+bus_booking		Seat	busId	5	Long		FOREIGN KEY	bus_booking	Bus	id
+bus_booking		Booking	id	1	Long		PRIMARY KEY			
+bus_booking		Booking	userId	2	Long		FOREIGN KEY	bus_booking	User	id
+bus_booking		Booking	busId	3	Long		FOREIGN KEY	bus_booking	Bus	id
+bus_booking		Booking	bookingDate	4	LocalDateTime		NOT NULL			
+bus_booking		Booking	seatNumber	5	String		NOT NULL			
+bus_booking		Booking	amount	6	BigDecimal		NOT NULL			
+bus_booking		Booking	status	7	String		NOT NULL			

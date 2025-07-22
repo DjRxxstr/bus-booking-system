@@ -1,0 +1,16 @@
+digraph "ER Diagram" {
+	User [label="User
+(id, name, email, age, gender, role, password, isPregnant)" shape=box]
+	Bus [label="Bus
+(id, name, route, departureTime, arrivalTime, availableSeats, totalSeats, price)" shape=box]
+	Seat [label="Seat
+(id, seatNumber, seatType, status, busId)" shape=box]
+	Booking [label="Booking
+(id, userId, busId, bookingDate, seatNumber, amount, status)" shape=box]
+	Bus -> Seat [label="One-to-Many"]
+	User -> Booking [label="One-to-Many"]
+	Bus -> Booking [label="One-to-Many"]
+	Seat -> Bus [label="Many-to-One"]
+	Booking -> User [label="Many-to-One"]
+	Booking -> Bus [label="Many-to-One"]
+}
